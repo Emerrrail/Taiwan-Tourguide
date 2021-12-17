@@ -68,7 +68,7 @@ body {
 #home-container {
     margin: 0;
     padding: 0;
-    width: auto;
+    width: 100%;
     height: 38rem;
     background: white;
     position: relative;
@@ -347,7 +347,11 @@ input:focus {
     height: 16.07px;
 }
 
+
+
+
 /* section 1 熱門城市*/
+
 .small-title {
     margin: 0 auto 1rem 12%;
     display: flex;
@@ -363,7 +367,7 @@ input:focus {
 .card-container, .card-container-1 {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 }
 
 .card-column, .card-column-1 {
@@ -459,9 +463,10 @@ input:focus {
     display: none;
 }
 
+
 /* Section 2 */
 #travelCards {
-    height: 530px;
+    height: auto;
     padding: 0;
     margin: 0 auto;
     display: inline-flex;
@@ -473,7 +478,7 @@ input:focus {
     width: 506px;
     height: 212px;
     padding: 16px;
-    margin: 0 0.4rem;
+    margin: 0.5rem 0.4rem;
     background: white;
     display: inline-flex;
     justify-items: center;
@@ -513,7 +518,7 @@ input:focus {
     flex-direction: column;
     justify-content: space-between;
 }
-.travel-content h3 {
+.travel-title {
     font-weight: 400;
     font-size: 16px;
     margin: 0 0 0;
@@ -522,7 +527,7 @@ input:focus {
     white-space: nowrap;
 }
 /* 字超出該行就要化為...h3一行就要收，p是4行 */
-.travel-content p {
+.travel-text {
     margin-bottom: 1rem;
     color: #ACACAC;
     font-size: 14px;
@@ -542,7 +547,7 @@ input:focus {
     justify-content: space-between;
     align-items: center;
 }
-.loca-btn-container div {
+.travel-loca {
     display: flex;
     align-items: center;
 }
@@ -557,7 +562,6 @@ input:focus {
 .travel-btn-container {
     width: 120px;
     height: 36px;
-    padding: 0;
     margin: auto 0 0 0;
     border: 0.05rem solid #FF1D6C;
     border-radius: 7px;
@@ -565,24 +569,15 @@ input:focus {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-}
-.travel-btn {
-    padding: 0.5rem 2rem;
-    margin: auto 0 0 0;
+
     font-weight: 400;
     font-size: 14px;
     color: var( --theme-red );
-    cursor: pointer;
 }
-.travel-btn:hover {
-    padding: auto;
-    width: auto;
-    height: auto;
+
+.travel-btn-container:hover {
     background-color: var( --theme-red );
-    border: 0;
-    border-radius: 7px;
     color: white;
-    text-align: center;
 }
 
 /* travel-popups */
@@ -777,11 +772,79 @@ footer p {
 
 
 
+@media (max-width: 1280px) {
+    .section-without-home {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1280px) {
+    .popular-cities-container {
+        flex-wrap: nowrap;
+    }
+
+    
+}
+
+@media (max-width: 1102px) {
+    .travel-card {
+        width: 100%;
+    }
+    .travel-content {
+        width: 100%;
+    }
+}
 
 
 
+@media (max-width: 576px) {
+    .travel-title {
+        white-space:pre-wrap;
+    }
+    .travel-text {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
 
+    #travelCards {
+        width: 100%;
+    }
+}
 
+@media (max-width: 535px) {
+    .travel-picture {
+
+    }
+    .loca-btn-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .travel-loca {
+        margin-bottom: 0.5rem;
+    }
+    .travel-btn-container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 415px) {
+    .travel-card {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .travel-pic-div, .travel-picture {
+        width: 100%;
+    }
+    .travel-title {
+        margin-top: 0.5rem;
+    }
+}
 
 
 

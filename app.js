@@ -575,7 +575,7 @@ function makeTravelCards() {
                 <h3 class="travel-title">${dataset[i].Name}</h3>
                 <p class="travel-text">${dataset[i].Description}</p>
                 <div class="loca-btn-container">
-                    <div>
+                    <div class="travel-loca">
                         <img src="Images/red_pin.svg">
                         <span>${dataset[i].Location}</span>
                     </div>
