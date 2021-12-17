@@ -139,25 +139,6 @@ body {
     -webkit-animation-delay: 40s;
     animation-delay: 40s;
 }
-/* #home-pic-container img:nth-child(6) {
-    -webkit-animation-delay: 25s;
-    animation-delay: 25s;
-}
-#home-pic-container img:nth-child(7) {
-    -webkit-animation-delay: 30s;
-    animation-delay: 30s;
-}
-#home-pic-container img:nth-child(8) {
-    -webkit-animation-delay: 35s;
-    animation-delay: 35s;
-}
-#home-pic-container img:nth-child(9) {
-    -webkit-animation-delay: 40s;
-    animation-delay: 40s;
-}
-#home-pic-container img:nth-child(10) {
-    -webkit-animation-delay: 45s;
-    animation-delay: 45s; */
 
 
 
@@ -365,10 +346,6 @@ input:focus {
     width: 15px;
     height: 16.07px;
 }
-#search-btn:hover {
-    transform: translate(-0,-6%);
-    transition: all 0.5s;
-}
 
 /* section 1 熱門城市*/
 .small-title {
@@ -475,6 +452,7 @@ input:focus {
     width: auto;
     height: auto;
     margin: auto 0.5rem auto 0.5rem;
+    cursor: pointer;
 }
 
 .card-container-1 {
@@ -724,6 +702,7 @@ input:focus {
     display: flex;
     flex-direction: column;
     box-shadow: 0px 4px 3px rgba(13, 11, 12, 0.2);
+    cursor: pointer;
     /* justify-content: space-between; */
 }
 
@@ -741,7 +720,7 @@ input:focus {
     height: 137px;
 }
 
-.food-content a {
+.food-name {
     margin: 0 12px 0 12px;
     font-size: 14px;
     font-weight: 400;

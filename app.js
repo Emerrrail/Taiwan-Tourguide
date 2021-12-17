@@ -1,21 +1,4 @@
-// Creating a server
-// const express = require('express')
-// const router = express.Router();
-// const app = express();
-// const port = 3000;
 
-// const path = require('path')
-
-// app.set('view engine', 'ejs');
-// app.set('views', path.join(__dirname, 'views'));
-
-// router.get('/', (req, res) => {
-//     res.render('home');
-// })
-
-// app.listen(3000, (req, res) => {
-//     console.log('LISTENING ON PORT 3000');
-// })
 
 // (Fake) data
 const travelData =
@@ -688,12 +671,12 @@ function makeFoodCards() {
 
     for (let i = 0; i < 10; i++) {
         let foodInfo =
-            `<li class='food-card'>
+            `<li class='food-card' onClick='location=${dataset[i].WebsiteUrl}'>
                 <div class='food-pic-div'>
                     <img src='${dataset[i].Picture.PictureUrl1}' alt='${dataset[i].Picture.PictureDescription1}'>
                 </div>
                 <div class='food-content'>
-                    <a href='${dataset[i].WebsiteUrl}'>${dataset[i].Name}</a>
+                    <div class='food-name'>${dataset[i].Name}</div>
                     <div class='loca-pin-div'>
                         <img src=${locaRedPin} src='${dataset.Address}'>
                         <span>${dataset[i].Address.slice(0, 3)}</span>
