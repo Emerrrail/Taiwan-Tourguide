@@ -152,7 +152,7 @@ body {
     transform: translate(-50%,-50%);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
 }
 
 h1 {
@@ -175,7 +175,7 @@ h1 span {
     color: white;
     font-weight: 400;
     font-size: 14px;
-    margin: 9px auto;
+    margin: 9px;
 }
 .home-intro form {
     width: 500px;
@@ -241,7 +241,7 @@ input:focus {
     margin: 0;
 }
 .default-first li {
-    letter-spacing: 26px;
+    letter-spacing: 31px;
 }
 
 .type-option, .city-option {
@@ -257,7 +257,7 @@ input:focus {
 
 }
 /* li設小一點讓字靠中一點 */
-.type-option li, .city-option li {
+.type-li, .city-li {
     position: relative;
     width: 221px;
     height: 26px;
@@ -269,17 +269,17 @@ input:focus {
 }
 
 /* 圓弧要補上 */
-.type-option li:last-child {
+.type-li:last-child {
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
 }
-.city-option li:last-child {
+.city-li:last-child {
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
 }
 
 /* a就是放在li裡面讓人點而已，字都在li裡面 */
-.type-option li a, .city-option li a {
+.type-li a, .city-li a {
     position: absolute;
     top: 0;
     left: 0;
@@ -290,19 +290,19 @@ input:focus {
     text-decoration-line: none;
 }
 
-.city-option li {
+.city-li {
     letter-spacing: 7px;
 }
-.type-option li {
-    letter-spacing: 26px
+.type-li {
+    letter-spacing: 31px
 }
 
 /* 游標上去反紅 */
-.type-option li:hover {
+.type-li:hover {
     background-color: var( --theme-red );
     color: white;
 }
-.city-option li:hover {
+.city-li:hover {
     background-color: var( --theme-red );
     color: white;
 }
@@ -423,6 +423,9 @@ input:focus {
 }
 
 
+.card-odd-container, .card-even-container {
+    cursor: pointer;
+}
 .card-even-container, .card-even-container-1 {
     width: auto;
     height: auto;
@@ -778,9 +781,14 @@ footer p {
     }
 }
 
-@media (min-width: 1200px) and (max-width: 1280px) {
-    .popular-cities-container {
+@media (max-width: 1200px) {
+    .card-container, .card-container-1 {
         flex-wrap: nowrap;
+        overflow: scroll;
+        justify-content: flex-start;
+    }
+    .hidden_button {
+        display: none;
     }
     
 }
@@ -871,6 +879,29 @@ footer p {
     }
 }
 
+@media (max-width: 625px) {
+    #nav-flex-container {
+        padding: 0 2rem 0;
+        flex-direction: column;
+        align-items: center;
+    }
+    #nav-flex-container-1 {
+        width: 100%;
+        padding: 0;
+        justify-content: space-around;
+    }
+
+    #icon {
+        margin: 1.5rem 0 1rem;
+    }
+    .nav-flex-container-2 {
+        padding: 0;
+    }
+    .nav-flex-container-3 img {
+        display: none;
+    }
+}
+
 
 @media (max-width: 576px) {
     .travel-title {
@@ -908,6 +939,48 @@ footer p {
         height: 19px;
     }
     
+
+    #home-search-select {
+        position: relative;
+        width: 250px;
+        height: auto;
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: space-between; */
+    }
+    .search-city-container {
+        margin: 3px 0 0;
+    }
+    .search-type-container, .search-city-container, .default, .type-option, .type-li a, .city-option, .city-li a {
+        width: 100%;
+    }
+    .type-li, .city-li {
+        width: auto;
+        z-index: 500;
+    }
+    .home-intro form {
+        width: 250px;
+    }
+    .searchbox-container {
+        width: 200px;
+    }
+    #home-searchbox {
+        width: 180px;
+    }
+    .home-intro {
+        width: 270px;
+    }
+    .home-intro h1 {
+        font-size: 35px;
+    }
+    .home-intro h6 {
+        font-size: 10px;
+    }
+    #home-container {
+        height: 28rem;
+    }
+
 }
 
 @media (max-width: 535px) {
