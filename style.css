@@ -607,7 +607,8 @@ input:focus {
     height: 825px;
     z-index: 2000;
     position: fixed;
-    top: 110px;
+    top: 50%;
+    transform: translate(0, -50%);
     display: flex;
     justify-content: center
 }
@@ -617,7 +618,7 @@ input:focus {
     background-color: white;
     margin: 0;
     padding: 0;
-    
+    position: relative;
 }
 .detail-content-container {
     height: 761px;
@@ -625,6 +626,7 @@ input:focus {
     margin: 32px;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .detail-pic {
@@ -633,12 +635,12 @@ input:focus {
     object-fit: cover;
     margin: 0 0 32px 0;
 }
-.detail-content-container h3 {
+.detail-title {
     font-size: 18px;
     font-weight: 400;
     margin: 0 0 15px;
 }
-.detail-content-container p {
+.detail-text {
     font-size: 14px;
     font-weight: 400;
     margin: 0;
@@ -650,7 +652,7 @@ input:focus {
     margin: 0;
     display: flex; 
     position: absolute;
-    bottom: 32px;
+    bottom: 0;
     /* display:flex讓兩個box可以併排 */
 }
 .loca-phone-box {
@@ -678,6 +680,17 @@ input:focus {
     position: absolute;
     right: 0;
     cursor: pointer;
+}
+
+.popup-close-btn.inside {
+    background-color: transparent;
+    border-radius: 8px;
+    box-shadow: none;
+    z-index: 2000;
+    position: absolute;
+    top: 0;
+    right: 0;
+    visibility: hidden;
 }
 
 
@@ -774,7 +787,6 @@ footer p {
 }
 
 
-
 @media (max-width: 1280px) {
     .section-without-home {
         width: 100%;
@@ -846,6 +858,18 @@ footer p {
     }
 }
 
+@media (max-width: 800px) {
+    .popup-close-btn.outside {
+        display: none;
+    }
+    .popup-close-btn.inside {
+        visibility: visible;
+    }
+    .card-btn-container {
+        width: 100%;
+    }
+}
+
 @media (max-width: 746px) {
     .travel-title {
         display: -webkit-box;
@@ -876,6 +900,40 @@ footer p {
 
     .home-intro h1 {
         font-size: 45px;
+    }
+
+    .card-btn-container {
+        width: 100%;
+        height: 100%;
+    }
+    .detail-card-container {
+        width: 100%;
+        height: 100%;
+    }
+    .detail-content-container {
+        width: auto;
+        height: 100%;
+        margin: 0;
+    }
+    .detail-pic {
+        width: 100%;
+        height: 40vh;
+        margin-bottom: 16px;
+    }
+    .detail-title, .detail-text {
+        margin: 0 16px 12px;
+    }
+    .detail-title {
+        font-size: 16px;
+    }
+    .detail-text {
+        font-size: 12px;
+    }
+    .loca-phone-container {
+        width: 100%;
+        margin: 0 0 16px 16px;
+        justify-content: space-between;
+        font-size: 8px;
     }
 }
 
@@ -1030,6 +1088,12 @@ footer p {
         width: 130px;
         height: 95px;
         margin: 0;
+    }
+}
+
+@media (max-width: 380px) and (max-height: 600px) {
+    .detail-pic {
+        height: 0vh;
     }
 }
 
