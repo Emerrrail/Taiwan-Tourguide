@@ -805,7 +805,7 @@ footer p {
     
 }
 
-@media (max-width: 1102px) {
+@media (min-width: 576px) and (max-width: 1102px) {
     .travel-card {
         width: 100%;
     }
@@ -815,28 +815,44 @@ footer p {
     #foodCards {
         height: auto;
         display: grid;
-        grid-template-columns: repeat(2, 400px);
-        grid-template-rows: repeat(5, 350px);
-        grid-gap: 3.5rem;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(5, 244px);
+        grid-gap: 16px;
+        margin: 6.4px;
     }
     .food-card {
         width: 100%;
-        height: 100%;
         margin: 0;
+        background-color: white;
+        display: grid;
+        grid-template-columns: 16px 187px 1fr 16px;
+        grid-template-rows: 16px 1fr 16px;
+        box-shadow: 0px 4px 3px rgb(13 11 12 / 20%);
+        cursor: pointer;
     }
+
     .food-pic-div {
+        grid-column: 2/3;
+        grid-row: 2/3;
         width: 100%;
+        align-items: center;
     }
     .food-pic-div img {
-        width: 100%;
-        height: 225px;
+        width: 187px;
+        height: 196px;
+        margin: 0;
+    }
+    .food-content {
+        grid-column: 3/4;
+        grid-row: 2/3;
     }
     .food-name {
         font-size: 20px;
+        margin: 8px 12px;
     }
     .loca-pin-div span {
         margin: auto 0.5rem;
-        font-size: 16px;
+        font-size: 20px;
     }
     .loca-pin-div img {
         width: 16px;
@@ -844,19 +860,6 @@ footer p {
     }
 }
 
-@media (max-width: 930px) {
-    #foodCards {
-        height: auto;
-        display: grid;
-        grid-template-columns: repeat(2, 350px);
-        grid-template-rows: repeat(5, 300px);
-        grid-gap: 2rem;
-    }
-    .food-pic-div img {
-        width: 100%;
-        height: 180px;
-    }
-}
 
 @media (max-width: 800px) {
     .popup-close-btn.outside {
@@ -876,17 +879,19 @@ footer p {
         -webkit-line-clamp: 1;
         -webkit-box-orient: vertical;
     }
+
     #foodCards {
-        height: auto;
-        display: grid;
-        grid-template-columns: repeat(2, 240px);
-        grid-template-rows: repeat(5, 270px);
-        grid-gap: 2rem;
+        grid-template-rows: repeat(5, 200px);
+    }
+    .food-card {
+        grid-template-columns: 16px 150px 1fr 16px;
+        height: 100%;
     }
     .food-pic-div img {
-        width: 100%;
-        height: 130px;
+        width: 150px;
+        height: 155px;
     }
+    
     .food-name {
         font-size: 16px;
     }
@@ -962,6 +967,12 @@ footer p {
 
 
 @media (max-width: 576px) {
+    .travel-card {
+        width: 100%;
+    }
+    .travel-content {
+        width: 100%;
+    }
     .travel-title {
         white-space:pre-wrap;
     }
@@ -971,30 +982,49 @@ footer p {
 
     #foodCards {
         height: auto;
-        display: flex;
-        grid-gap: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(5, 300px);
+        grid-gap: 16px;
+        margin: 6.4px;
     }
+
     .food-card {
-        padding: 16px;
-        flex-direction: row;
-        justify-content: flex-start;
-        margin: 0.5rem 0.4rem;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: 16px 1fr 16px;
+        grid-template-rows: 16px 150px 1fr 16px;
+        box-shadow: 0px 4px 3px rgb(13 11 12 / 20%);
+        cursor: pointer;
     }
+
     .food-pic-div {
         width: auto;
+        grid-column: 2/3;
+        grid-row: 2/3;
     }
     .food-pic-div img {
-        width: 187px;
+        width: 100%;
         height: 150px;
         margin: 0;
     }
     .food-content {
-        width: auto;
+        grid-column: 2/3;
+        grid-row: 3/4;
         height: auto;
     }
     .loca-pin-div img {
         width: 16px;
         height: 19px;
+    }
+    .food-name, .loca-pin-div {
+        margin: 0;
+    }
+    .food-name {
+        margin-top: 8px;
+        font-size: 20px;
     }
     
 
@@ -1084,10 +1114,22 @@ footer p {
     .travel-content {
         height: auto;
     }
+
+    #foodCards {
+        grid-template-rows: repeat(5, 250px);
+    }
+
+    .food-card {
+        height: auto;
+        grid-template-rows: 16px 120px 1fr 16px;
+    }
+    
     .food-pic-div img {
-        width: 130px;
-        height: 95px;
+        height: 120px;
         margin: 0;
+    }
+    .food-name {
+        font-size: 16px;
     }
 }
 
@@ -1101,17 +1143,27 @@ footer p {
     .travel-picture {
         height: 150px;
     }
+    #foodCards {
+        grid-template-rows: repeat(5, 190px);
+        grid-gap: 8px;
+    }
     .food-card {
-        flex-direction: column;
-        height: 270px;
+        height: 100%;
+        grid-template-rows: 8px 80px 1fr 8px;
+        grid-template-columns: 8px 1fr 8px;
     }
     .food-pic-div img {
         width: 100%;
-        height: 150px;
+        height: 80px;
     }
-    .food-content {
-        height: 100%;
+    .food-name, .loca-pin-div span {
+        font-size: 8px;
     }
+    .loca-pin-div img {
+        width: 11px;
+        height: 13px;
+    }
+    
 }
 
 
