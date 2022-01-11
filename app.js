@@ -526,6 +526,25 @@ for (let i = 0; i < cityLis.length; i++) {
 
 
 // 如果任何一個class包含acitve，設定他點外面就把option清單收起來
+window.onclick = function(event) {
+    if (!event.target.matches('.toggle')) {
+
+        const dropdownLists = document.getElementsByClassName("dropdown");
+        for (let i = 0; i < dropdownLists.length; i++) {
+            let openToggleActive = dropdownLists[i];
+            if (openToggleActive.classList.contains('active')) {
+                openToggleActive.classList.remove('active');
+            }
+        }
+    }
+}
+document.getElementById("searchType").addEventListener('click',function(event){
+    event.stopPropagation();
+});
+document.getElementById("searchCity").addEventListener('click',function(event){
+    event.stopPropagation();
+});
+
 
 
 
